@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="bootstrap.css">
+        <title>GAMES</title>
+    </head>
+    <body>
+
+
+        <div class="container " id="part3">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1 mt-4 bg-special rounded text-white pb-4 p-3">
+                    <h2 class="text-center">GUESS WORD</h2>
+                    <hr>
+                    <div class="text-center h5 my-4">
+                        Le jeu consiste à deviner un mot qui est généré automatiquement via un tableau prédéfini. <br>
+                        Cliquez sur le bouton en dessous pour débuter. Bonne chance!!
+                    </div>
+                    <hr>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-light p-2" onclick="startG()">Commencer maintenant</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container d-none" id="part4">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1 mt-4 bg-special rounded text-white pb-4 p-3">
+                    <div class="row">
+                        <div class="col-lg-4 float-start">
+                            <h2 class="text-start">GUESS WORD</h2>
+                        </div>
+                        <div class="col-lg text-end">
+                            <button type="button" class="btn btn-success" >Nombre d'essais restants: <b id="score">00</b></button>
+                        </div>
+                    </div>
+                    <hr>
+                    <h3 class="text-center">Le mot à deviner comporte <span id="nbreLettre">10</span> lettres</h3>
+                    <div class="row text-center py-4 justify-content-center" id="caseConteneur">
+                    </div>
+                    <hr>
+                    <div class="col-lg text-center">
+                        <input type="text" pattern="[a-z]{1}" name="text" id="devin" maxlength="1">
+                        <div class="col-lg text-center mt-3">
+                            <button type="button" class="btn btn-warning px-4 py-2 text-white" onclick="devinerNbre()" id="deviner">DEVINER</button>
+                        </div>
+                        <div class="col-lg bg-danger-flou p-3 m-3 rounded text-danger text-center d-none" id="saisieInvalid">
+                            Désolé la <b>lettre</b> entrer ne se trouve pas dans le mot à deviner. <br>
+                            Essayer encore
+                        </div>
+                    </div>
+                    <div class="text-start p-3 mt-4 text-success bg-valid rounded d-none" id="rAnswer">
+                        <b>Félicitations Jeddai</b>, vous avez trouver le bon mot.
+                        <div class="text-start mt-3">
+                            <button type="button" class="btn btn-light" onclick="restart()">Recommencer</button>
+                        </div>
+                    </div>
+                    <div class="text-start p-3 mt-4 text-danger bg-danger-flou rounded d-none" id="wAnswer">
+                        Désolé le <b>looser</b>, après tout ces essais tu n'as pas pu trouver le bon mot. <br>
+                        Nous te dévoilons le bon mot.
+                        <div class="text-start mt-3">
+                            <button type="button" class="btn btn-light text-center" onclick="restart()">Recommencer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
